@@ -1,74 +1,145 @@
 .App {
   min-height: 100vh;
-  background-color: #f5f5f5;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   padding: 20px;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  background-color: white;
-  padding: 40px;
+}
+
+.app-header {
+  background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-h1 {
+.app-header h1 {
+  margin: 0;
   color: #333;
-  margin-bottom: 10px;
   font-size: 2rem;
+  font-weight: 600;
 }
 
-.subtitle {
-  color: #666;
-  margin-bottom: 30px;
+.sdk-status {
+  display: flex;
+  align-items: center;
+}
+
+.status-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
   font-size: 0.9rem;
+  font-weight: 600;
 }
 
-.section {
-  margin-bottom: 30px;
+.status-success {
+  background-color: #d4edda;
+  color: #155724;
 }
 
-h2 {
-  color: #444;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
+.status-error {
+  background-color: #f8d7da;
+  color: #721c24;
 }
 
-.data-display {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 15px;
-  overflow-x: auto;
-  font-family: 'Courier New', monospace;
-  font-size: 0.9rem;
-  line-height: 1.5;
+.status-loading {
+  background-color: #d1ecf1;
+  color: #0c5460;
 }
 
-.btn-primary {
-  background-color: #007bff;
+.error-banner {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  border: 1px solid #f5c6cb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error-banner strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.btn-retry {
+  background-color: #dc3545;
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 8px 16px;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: background-color 0.2s;
+  white-space: nowrap;
+  margin-left: 16px;
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
+.btn-retry:hover {
+  background-color: #c82333;
 }
 
-.btn-primary:active {
-  background-color: #004085;
+.results-header-actions {
+  position: relative;
 }
 
-.hint {
-  color: #666;
+.btn-clear {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
   font-size: 0.9rem;
-  margin-top: 10px;
-  font-style: italic;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  z-index: 1;
 }
 
+.btn-clear:hover {
+  background-color: #5a6268;
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .error-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-retry {
+    margin-left: 0;
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  .btn-clear {
+    position: static;
+    margin-top: 12px;
+    width: 100%;
+  }
+}
