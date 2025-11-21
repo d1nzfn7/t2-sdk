@@ -12,25 +12,23 @@ const { getSDK } = require('./sdk');
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8091;  // Default to 8091 for Node.js backend
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
 /**
- * Middleware to extract JWT token from Authorization header (optional in local mode)
+ * Middleware to extract JWT token from Authorization header (optional)
  * Token format: "Bearer <token>"
  *
- * In local mode (FN7_LOCAL_MODE=true or NODE_ENV=development), token is optional.
- * SDK automatically uses hardcoded dev token if no token provided.
+ * If no token is provided, SDK will use default values automatically.
  */
 function extractJWTToken(req, res, next) {
   const authHeader = req.headers.authorization;
 
-  // In local mode, token is optional - SDK will use hardcoded dev token
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    req.jwtToken = undefined; // SDK will handle this in local mode
+    req.jwtToken = null; // SDK will use default values
     next();
     return;
   }
@@ -48,7 +46,7 @@ function errorHandler(err, req, res, next) {
   console.error('Error:', err);
   res.status(500).json({
     error: 'Internal server error',
-    message: process.env.NODE_ENV === 'development' ? err.message : undefined
+    message: err.message
   });
 }
 

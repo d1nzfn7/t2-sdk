@@ -13,14 +13,13 @@
 
 export const environment = {
   firebase: {
-    apiKey: 'your-local-api-key',
-    authDomain: 'your-local-auth-domain',
-    databaseURL: 'your-local-database-url',
-    projectId: 'your-local-project-id',
-    storageBucket: 'your-local-storage-bucket',
-    messagingSenderId: 'your-local-sender-id',
-    appId: 'your-local-app-id',
-    measurementId: 'your-local-measurement-id',
+    apiKey: "AIzaSyDoCwHuDbpOLO7AmHA7ACrfKDYWZfnKLXA",
+    authDomain: "testing-cdd44.firebaseapp.com",
+    projectId: "testing-cdd44",
+    storageBucket: "testing-cdd44.firebasestorage.app",
+    messagingSenderId: "1096498398002",
+    appId: "1:1096498398002:web:6de27d13d2cb4c8dac8d2b",
+    measurementId: "G-MM967YWQE4"
   },
   // Set to undefined for local mode (no backend calls, automatic defaults)
   // Set to 'https://atlas.dev2.app.fn7.io' for dev environment

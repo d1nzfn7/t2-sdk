@@ -226,7 +226,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 **5.3. Install Dependencies:**
 ```bash
-pip install fn7-sdk --index-url https://fn7.io/.fn7-sdk/python/
+pip install fn7-sdk --extra-index-url https://fn7.io/.fn7-sdk/python/
 pip install fastapi uvicorn python-dotenv
 ```
 

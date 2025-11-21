@@ -4,6 +4,7 @@ import SetupSection from './components/SetupSection';
 import ContextDisplay from './components/ContextDisplay';
 import FirebaseOperations from './components/FirebaseOperations';
 import ResultsDisplay from './components/ResultsDisplay';
+import BackendTesting from './components/BackendTesting';
 import { environment } from './config/environment';
 
 function App() {
@@ -94,6 +95,8 @@ function App() {
         <ContextDisplay sdk={sdk} key={refreshKey} />
 
         <FirebaseOperations sdk={sdk} onOperation={handleOperation} />
+
+        <BackendTesting />
 
         <div className="results-header-actions">
           <ResultsDisplay results={results} />

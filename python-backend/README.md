@@ -21,7 +21,7 @@ Backend server built with FN7 SDK for Python, providing Firebase operations with
 2. **Install dependencies**
    ```bash
    # Install fn7-sdk from custom registry
-   pip install fn7-sdk --index-url https://fn7.io/.fn7-sdk/python/
+   pip install fn7-sdk --extra-index-url https://fn7.io/.fn7-sdk/python/
 
    # Install other dependencies
    pip install -r requirements.txt
